@@ -12,6 +12,9 @@ fi
 
 #Run puppet to apply custom config
 puppet apply -v /root/init.pp
+#stop cobbler and dnsmasq
+/etc/init.d/dnsmasq stop
+/etc/init.d/cobblerd stop
 
 #Set up nailgun DB
 /etc/init.d/httpd start
