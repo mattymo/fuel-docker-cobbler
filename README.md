@@ -1,8 +1,5 @@
-fuel-nailgun
+fuel-cobbler
 ============
 
-Docker image with Fuel UI
+Docker image with cobbler for Fuel
 
-### Usage
-
-The image exposes port 8001
