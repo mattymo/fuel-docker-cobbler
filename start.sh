@@ -18,5 +18,6 @@ puppet apply -v /root/init.pp
 
 #Set up nailgun DB
 /etc/init.d/httpd start
+/etc/init.d/xinetd start
 dnsmasq -d &
 cobblerd -F
