@@ -14,7 +14,6 @@ RUN yum --quiet install -y ruby21-puppet
 RUN yum --quiet install -y httpd cobbler dnsmasq xinetd tftp-server
 
 ADD etc /etc
-ADD var /var
 RUN cp /etc/puppet/modules/nailgun/examples/cobbler-only.pp /root/init.pp
 #Workaround so cobbler sync works
 RUN ln -s /proc/mounts /etc/mtab
