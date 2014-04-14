@@ -7,7 +7,7 @@ NTP2: time-a.nist.gov
 NTP3: time-b.nist.gov
 ADMIN_NETWORK:
   interface: eth0
-  ipaddress: 172.18.8.201
+  ipaddress: 10.20.0.2
   netmask: 255.255.255.0
   cidr: 10.20.0.0/24
   size: '256'
@@ -15,9 +15,4 @@ ADMIN_NETWORK:
   static_pool_end: 10.20.0.120
   dhcp_pool_start: 10.20.0.130
   dhcp_pool_end: 10.20.0.254
-rh_username: 888Mirantis
-rh_password: Mira1234
-deployment_mode: rpmcache
-deployment_id: rpmcache
-uid: master
 TEST_DNS: www.google.com

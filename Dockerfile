@@ -14,7 +14,6 @@ RUN yum --quiet install -y ruby21-puppet
 RUN yum --quiet install -y httpd cobbler dnsmasq xinetd tftp-server
 
 ADD etc /etc
-RUN cp /etc/puppet/modules/nailgun/examples/cobbler-only.pp /root/init.pp
 #Workaround so cobbler sync works
 RUN ln -s /proc/mounts /etc/mtab
 #Workaround for dnsmasq startup
@@ -23,7 +22,7 @@ RUN echo -e "NETWORKING=yes\nHOSTNAME=$HOSTNAME" > /etc/sysconfig/network
 RUN mkdir -p /root/.ssh; chmod 700 /root/.ssh; touch /root/.ssh/id_rsa.pub
 
 
-RUN /etc/init.d/httpd start && puppet apply -v /root/init.pp
+RUN /etc/init.d/httpd start && puppet apply -v /etc/puppet/modules/nailgun/examples/cobbler-only.pp
 
 RUN mkdir -p /usr/local/bin
 ADD start.sh /usr/local/bin/start.sh
