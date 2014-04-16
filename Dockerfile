@@ -14,8 +14,6 @@ RUN yum --quiet install -y ruby21-puppet
 RUN yum --quiet install -y httpd cobbler dnsmasq xinetd tftp-server
 
 ADD etc /etc
-#Workaround so cobbler sync works
-RUN ln -s /proc/mounts /etc/mtab
 #Workaround for dnsmasq startup
 RUN echo -e "NETWORKING=yes\nHOSTNAME=$HOSTNAME" > /etc/sysconfig/network
 #FIXME workaround for ssh key
